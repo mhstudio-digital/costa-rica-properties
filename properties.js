@@ -34,6 +34,9 @@ const SITE_CONFIG = {
    status:        "disponible" | "vendido" | "reservado"
    ---------------------------------- */
 
+/* REEMPLAZAR: las 12 propiedades de abajo son de ejemplo con fotos
+   stock de Unsplash — sustituir por el inventario real del cliente. */
+
 const PROPERTIES = [
   {
     id: 1,

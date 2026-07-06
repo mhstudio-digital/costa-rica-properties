@@ -89,10 +89,10 @@
           <label>Precio Máximo</label>
           <select id="filterPrice">
             <option value="">Sin límite</option>
-            <option>$500,000</option>
-            <option>$1,000,000</option>
-            <option>$2,000,000</option>
-            <option>$5,000,000</option>
+            <option value="500000">$500,000</option>
+            <option value="1000000">$1,000,000</option>
+            <option value="2000000">$2,000,000</option>
+            <option value="5000000">$5,000,000</option>
           </select>
         </div>
         <button class="search-btn" onclick="applyHeroFilter()">Buscar</button>
@@ -140,7 +140,7 @@
       </div>
     </div>
     <div class="properties-grid" id="propertiesGrid"></div>
-    <div class="load-more-wrap reveal"><button class="btn-outline" onclick="loadMore()">Ver Más Propiedades</button></div>
+    <div class="load-more-wrap reveal"><button class="btn-outline" id="loadMoreBtn" onclick="loadMore()">Ver Más Propiedades</button></div>
   </div>
 </section>
 
@@ -197,63 +197,63 @@
       <p style="font-size:13px;color:var(--gray-mid);line-height:1.8;margin-top:16px">Cada zona tiene su propio carácter, inversión y estilo de vida. Conozca dónde encontrar la propiedad de sus sueños.</p>
     </div>
     <div class="zones-grid reveal">
-      <div class="zone-card" onclick="filterProperties('Guanacaste',null);document.getElementById('properties').scrollIntoView({behavior:'smooth'})">
+      <div class="zone-card" onclick="filterByZone('Guanacaste')">
         <div class="zone-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85&auto=format&fit=crop" alt="Guanacaste"></div>
         <div class="zone-overlay"></div>
         <div class="zone-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="zone-content">
           <div class="zone-name">Guanacaste</div>
-          <div class="zone-count">42 propiedades disponibles</div>
+          <div class="zone-count" data-zone-count="Guanacaste"></div>
           <div class="zone-desc">El destino más codiciado de Costa Rica. Playas vírgenes, clima seco y un mercado inmobiliario en constante expansión.</div>
         </div>
       </div>
-      <div class="zone-card">
+      <div class="zone-card" onclick="filterByZone('Escazú')">
         <div class="zone-img"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=85&auto=format&fit=crop" alt="Escazú"></div>
         <div class="zone-overlay"></div>
         <div class="zone-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="zone-content">
           <div class="zone-name">Escazú</div>
-          <div class="zone-count">68 propiedades disponibles</div>
+          <div class="zone-count" data-zone-count="Escazú"></div>
           <div class="zone-desc">El Beverly Hills de San José. Residencias exclusivas, comunidades cerradas y el barrio más cosmopolita del país.</div>
         </div>
       </div>
-      <div class="zone-card">
+      <div class="zone-card" onclick="filterByZone('Tamarindo')">
         <div class="zone-img"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=85&auto=format&fit=crop" alt="Tamarindo"></div>
         <div class="zone-overlay"></div>
         <div class="zone-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="zone-content">
           <div class="zone-name">Tamarindo</div>
-          <div class="zone-count">29 propiedades disponibles</div>
+          <div class="zone-count" data-zone-count="Tamarindo"></div>
           <div class="zone-desc">Surf, puestas de sol y una comunidad internacional vibrante. Uno de los mercados de mayor crecimiento en el Pacífico Norte.</div>
         </div>
       </div>
-      <div class="zone-card">
+      <div class="zone-card" onclick="filterByZone('Santa Ana')">
         <div class="zone-img"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=85&auto=format&fit=crop" alt="Santa Ana"></div>
         <div class="zone-overlay"></div>
         <div class="zone-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="zone-content">
           <div class="zone-name">Santa Ana</div>
-          <div class="zone-count">54 propiedades disponibles</div>
+          <div class="zone-count" data-zone-count="Santa Ana"></div>
           <div class="zone-desc">Clima privilegiado, seguridad y comunidades premium. La elección favorita de familias y ejecutivos internacionales.</div>
         </div>
       </div>
-      <div class="zone-card">
+      <div class="zone-card" onclick="filterByZone('Nosara')">
         <div class="zone-img"><img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&q=85&auto=format&fit=crop" alt="Nosara"></div>
         <div class="zone-overlay"></div>
         <div class="zone-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="zone-content">
           <div class="zone-name">Nosara</div>
-          <div class="zone-count">18 propiedades disponibles</div>
+          <div class="zone-count" data-zone-count="Nosara"></div>
           <div class="zone-desc">Yoga, surf y naturaleza prístina. El destino favorito de una élite global que busca bienestar y privacidad absoluta.</div>
         </div>
       </div>
-      <div class="zone-card">
+      <div class="zone-card" onclick="filterByZone('Jacó')">
         <div class="zone-img"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=85&auto=format&fit=crop" alt="Jacó"></div>
         <div class="zone-overlay"></div>
         <div class="zone-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div>
         <div class="zone-content">
           <div class="zone-name">Jacó</div>
-          <div class="zone-count">33 propiedades disponibles</div>
+          <div class="zone-count" data-zone-count="Jacó"></div>
           <div class="zone-desc">El Pacífico Central más dinámico. Alta rentabilidad en alquiler vacacional y proyectos de desarrollo exclusivos.</div>
         </div>
       </div>
@@ -774,6 +774,7 @@
   </div>
 </div>
 
+<script src="properties.js" defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

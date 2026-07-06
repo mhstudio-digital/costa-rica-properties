@@ -101,7 +101,7 @@
       </div>
       <div class="search-bar">
         <div class="search-field">
-          <label>Zona</label>
+          <label for="filterZone">Zona</label>
           <select id="filterZone">
             <option value="">Todas las zonas</option>
             <option>Escazú</option>
@@ -115,7 +115,7 @@
           </select>
         </div>
         <div class="search-field">
-          <label>Tipo</label>
+          <label for="filterType">Tipo</label>
           <select id="filterType">
             <option value="">Cualquier tipo</option>
             <option>Villa</option>
@@ -127,7 +127,7 @@
           </select>
         </div>
         <div class="search-field">
-          <label>Precio Máximo</label>
+          <label for="filterPrice">Precio Máximo</label>
           <select id="filterPrice">
             <option value="">Sin límite</option>
             <option value="500000">$500,000</option>
@@ -194,11 +194,11 @@
         <div class="section-label" style="color:var(--gold)">Búsqueda Inteligente</div>
         <h2 class="section-title" style="color:var(--white)">Encuentre su<br><em>Propiedad Ideal</em></h2>
       </div>
-      <p style="font-size:13px;color:rgba(255,255,255,.45);max-width:320px;line-height:1.7">Nuestro motor de búsqueda cuenta con más de 500 propiedades activas en las zonas más exclusivas de Costa Rica.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.65);max-width:320px;line-height:1.7">Nuestro motor de búsqueda cuenta con más de 500 propiedades activas en las zonas más exclusivas de Costa Rica.</p>
     </div>
     <div class="search-adv-grid reveal">
       <div class="search-adv-field">
-        <label>Zona</label>
+        <label for="advZone">Zona</label>
         <select id="advZone">
           <option value="">Todas las zonas</option>
           <option>Escazú</option><option>Santa Ana</option><option>Guanacaste</option>
@@ -207,7 +207,7 @@
         </select>
       </div>
       <div class="search-adv-field">
-        <label>Tipo de Propiedad</label>
+        <label for="advType">Tipo de Propiedad</label>
         <select id="advType">
           <option value="">Cualquier tipo</option>
           <option>Villa</option><option>Casa</option><option>Condominio</option>
@@ -215,14 +215,14 @@
         </select>
       </div>
       <div class="search-adv-field">
-        <label>Habitaciones</label>
+        <label for="advBeds">Habitaciones</label>
         <select id="advBeds">
           <option value="">Cualquier número</option>
           <option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option>
         </select>
       </div>
       <div class="search-adv-field">
-        <label>Precio Máximo (USD)</label>
+        <label for="advPrice">Precio Máximo (USD)</label>
         <input type="number" id="advPrice" placeholder="Sin límite" style="color:var(--white)">
       </div>
       <button class="search-adv-btn" onclick="advancedSearch()">Buscar →</button>
@@ -311,7 +311,7 @@
         <div class="section-label">Servicios Especializados</div>
         <h2 class="section-title" style="color:var(--white)">Una Firma Completa<br>a su <em>Servicio</em></h2>
       </div>
-      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.9">No somos solo intermediarios. Somos sus socios estratégicos en cada etapa del proceso inmobiliario. Con más de 18 años de trayectoria, ofrecemos un servicio integral que va mucho más allá de la transacción.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.9">No somos solo intermediarios. Somos sus socios estratégicos en cada etapa del proceso inmobiliario. Con más de 18 años de trayectoria, ofrecemos un servicio integral que va mucho más allá de la transacción.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
@@ -580,27 +580,27 @@
     <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto 60px">
       <div class="section-label" style="color:var(--gold)">Herramienta Financiera</div>
       <h2 class="section-title" style="color:var(--white)">Calculadora<br><em>Hipotecaria</em></h2>
-      <p style="font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;margin-top:16px">Estime su cuota mensual y analice diferentes escenarios de financiamiento para su propiedad en Costa Rica.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;margin-top:16px">Estime su cuota mensual y analice diferentes escenarios de financiamiento para su propiedad en Costa Rica.</p>
     </div>
     <div class="calc-grid reveal">
       <div class="calc-form">
         <h3 style="font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:32px">Parámetros del Préstamo</h3>
         <div class="calc-field">
-          <label>Valor de la Propiedad (USD)</label>
+          <label for="propValue">Valor de la Propiedad (USD)</label>
           <input type="number" id="propValue" value="500000" oninput="calcMortgage()">
         </div>
         <div class="calc-field">
-          <label>Prima / Enganche (%)</label>
+          <label for="downPct">Prima / Enganche (%)</label>
           <input type="range" class="calc-range" id="downPct" min="10" max="50" value="20" oninput="document.getElementById('downPctVal').textContent=this.value+'%';calcMortgage()">
           <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.4);margin-top:6px"><span>10%</span><span id="downPctVal" style="color:var(--gold)">20%</span><span>50%</span></div>
         </div>
         <div class="calc-field">
-          <label>Tasa de Interés Anual (%)</label>
+          <label for="interestRate">Tasa de Interés Anual (%)</label>
           <input type="range" class="calc-range" id="interestRate" min="5" max="15" step="0.25" value="7.5" oninput="document.getElementById('interestVal').textContent=this.value+'%';calcMortgage()">
           <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.4);margin-top:6px"><span>5%</span><span id="interestVal" style="color:var(--gold)">7.5%</span><span>15%</span></div>
         </div>
         <div class="calc-field">
-          <label>Plazo del Préstamo</label>
+          <label for="loanTerm">Plazo del Préstamo</label>
           <select id="loanTerm" onchange="calcMortgage()">
             <option value="10">10 años</option>
             <option value="15">15 años</option>
